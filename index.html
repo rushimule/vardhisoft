@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vardhisoft | Enterprise Software Development &amp; Cloud Architecture</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* ── Global Styles ── */
+        .hidden-demo {
+            display: none !important;
+        }
+        .tab-btn.active {
+            background-color: #4f46e5 !important;
+            color: #fff !important;
+            border-color: #4f46e5 !important;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+        .tab-btn:not(.active) {
+            background-color: #fff;
+            color: #475569;
+            border-color: #e2e8f0;
+        }
+        .tab-btn:not(.active):hover {
+            border-color: #94a3b8;
+        }
+        .template-card {
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+        .template-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+        }
+        #demo-sandbox-layer {
+            transition: opacity 0.3s ease;
+        }
+        #demo-sandbox-layer.hidden-demo {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #demo-sandbox-layer:not(.hidden-demo) {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .whatsapp-float {
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px -8px rgba(37, 211, 102, 0.4);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        .sandbox-iframe {
+            transition: opacity 0.2s ease;
+        }
+        .badge-pulse {
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased scroll-smooth">
+
+    <!-- ===== HEADER ===== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tight text-slate-900">
+                Vardhi<span class="text-indigo-600">soft</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-indigo-600 transition">About Us</a>
+                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
+                <a href="#capabilities" class="hover:text-indigo-600 transition">Capabilities Showcase</a>
+                <a href="#consultation" class="hover:text-indigo-600 transition">Start A Project</a>
+            </nav>
+            <a href="#consultation" class="bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium text-sm hover:bg-indigo-700 transition shadow-md shadow-indigo-600/10">Request a Quote</a>
+        </div>
+    </header>
+
+    <!-- ===== ABOUT / HERO ===== -->
+    <section id="about" class="py-20 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-3 py-1 rounded-full">Custom Engineering Studio</span>
+            <h1 class="text-4xl md:text-6xl font-black text-slate-950 tracking-tight mt-4 leading-tight">
+                We Engineer High-Performance <br /><span class="text-indigo-600">Digital Platforms for Scale</span>
+            </h1>
+            <p class="text-lg text-slate-500 mt-6 max-w-3xl mx-auto font-light">
+                Vardhisoft is a premier software architecture studio. We transform complex corporate operations, heavy data logistics, and unique business workflows into rapid, responsive, secure digital web frameworks.
+            </p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="#capabilities" class="bg-slate-950 text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-indigo-600 transition shadow-lg">Explore Our Work</a>
+                <a href="#consultation" class="border border-slate-300 bg-white text-slate-700 px-6 py-3 rounded-lg font-medium text-sm hover:border-slate-400 transition">Talk with an Architect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="py-16 bg-white border-t border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Our Development Capabilities</h2>
+                <p class="text-slate-500 mt-2 text-sm">End-to-end full-stack development designed for high traffic, speed, and continuous operations.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-200/60">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Custom Web Architectures</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">High-fidelity corporate platforms, secure e-commerce systems, dynamic digital menu managers, and custom reservation layouts optimized for high availability.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-200/60">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-route"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Logistics &amp; Supply Chain Systems</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">Dynamic routing engines, collection hub networks, freight calculation portals, and real-time milk procurement tracking matrices built for complex environments.</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-200/60">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-database"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Enterprise Resource Planning</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed">High-volume bulk manufacturing portals, multi-tenant stock management dashboards, global cargo quote arrays, and strict international compliance workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CAPABILITIES SHOWCASE ===== -->
+    <section id="capabilities" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">What We Can Build For You</h2>
+                <p class="text-slate-500 mt-2 text-sm">Filter and interact with live, fully localized layout prototypes to see the exact kinds of enterprise engines we engineer for different business industries.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+                <button onclick="filterTemplates('all')" id="btn-all" class="tab-btn active px-5 py-2 rounded-full text-sm font-medium border transition">All Frameworks</button>
+                <button onclick="filterTemplates('hospitality')" id="btn-hospitality" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border transition">Hospitality &amp; Dining</button>
+                <button onclick="filterTemplates('agri')" id="btn-agri" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border transition">Dairy &amp; Agriculture</button>
+                <button onclick="filterTemplates('mfg')" id="btn-mfg" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border transition">Manufacturing &amp; Logistics</button>
+                <button onclick="filterTemplates('logistics')" id="btn-logistics" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border transition">Logistics &amp; Supply</button>
+                <button onclick="filterTemplates('retail')" id="btn-retail" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border transition">Retail &amp; Delivery</button>
+            </div>
+
+            <!-- Templates Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="templates-grid">
+
+                <!-- ============================================================ -->
+                <!-- 1. VSH-01 Grand Horizon Resort (Hospitality)                   -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="hospitality">
+                    <div class="h-48 bg-gradient-to-br from-amber-700 to-amber-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSH-01</span>
+                        <div class="text-3xl"><i class="fa-solid fa-hotel"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Grand Horizon Resort</h4>
+                            <p class="text-xs text-amber-200 font-mono">Integrated Booking Engine</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Hotel &amp; Luxury Stay</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Multi-tenant room management, live occupancy calendars, secure transaction pipelines.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSH-01','Grand Horizon Resort')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Luxury UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 2. VSC-02 The Roastery Café (Hospitality)                     -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="hospitality">
+                    <div class="h-48 bg-gradient-to-br from-orange-800 to-amber-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSC-02</span>
+                        <div class="text-3xl"><i class="fa-solid fa-mug-saucer"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">The Roastery Café</h4>
+                            <p class="text-xs text-orange-200 font-mono">Digital Menu &amp; Ordering</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">Cafe &amp; Restaurant</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">High-speed interactive menus, table booking counters, localized customer cart checkouts.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSC-02','The Roastery Café')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Cozy Modern</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 3. VSH-06 Royal Palm Spa (Hospitality)                        -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="hospitality">
+                    <div class="h-48 bg-gradient-to-br from-teal-700 to-emerald-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSH-06</span>
+                        <div class="text-3xl"><i class="fa-solid fa-spa"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Royal Palm Spa</h4>
+                            <p class="text-xs text-teal-200 font-mono">Treatment Scheduling &amp; CRM</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Spa &amp; Wellness</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Full treatment catalog, therapist rotation engine, member loyalty portal, and real-time availability.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSH-06','Royal Palm Spa')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Wellness UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 4. VSH-07 Harbor Bay Marina (Hospitality)                     -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="hospitality">
+                    <div class="h-48 bg-gradient-to-br from-blue-800 to-cyan-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSH-07</span>
+                        <div class="text-3xl"><i class="fa-solid fa-ship"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Harbor Bay Marina</h4>
+                            <p class="text-xs text-cyan-200 font-mono">Slip Reservation &amp; Fleet Tracker</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Marina &amp; Boating</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Live slip availability, vessel maintenance logs, fuel dock management, and captain scheduling.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSH-07','Harbor Bay Marina')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Marine Ops</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 5. VSD-03 Kasturi Dairy (Agri)                                -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="agri">
+                    <div class="h-48 bg-gradient-to-br from-blue-700 to-cyan-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSD-03</span>
+                        <div class="text-3xl"><i class="fa-solid fa-cow"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Kasturi Dairy &amp; Farms</h4>
+                            <p class="text-xs text-cyan-200 font-mono">Procurement &amp; Route Tracking</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Dairy &amp; Cattle</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Milk weight intake networks, routing telemetry, local dairy collection nodes, fat-content analytics.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSD-03','Kasturi Dairy &amp; Farms')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Data Matrix</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 6. VAG-08 Green Valley Organics (Agri)                        -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="agri">
+                    <div class="h-48 bg-gradient-to-br from-lime-700 to-emerald-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VAG-08</span>
+                        <div class="text-3xl"><i class="fa-solid fa-leaf"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Green Valley Organics</h4>
+                            <p class="text-xs text-lime-200 font-mono">Farm Management &amp; Traceability</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-lime-600 uppercase tracking-wider">Organic Farming</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Crop rotation planning, soil health dashboards, harvest forecasting, and supply chain traceability.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VAG-08','Green Valley Organics')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Agri-Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 7. VAG-09 Golden Harvest Grains (Agri)                        -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="agri">
+                    <div class="h-48 bg-gradient-to-br from-amber-700 to-yellow-900 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VAG-09</span>
+                        <div class="text-3xl"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Golden Harvest Grains</h4>
+                            <p class="text-xs text-amber-200 font-mono">Commodity Trading &amp; Storage</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Grain &amp; Commodities</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Real-time grain pricing, silo inventory management, freight logistics, and export documentation.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VAG-09','Golden Harvest Grains')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Commodities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 8. VSF-04 Lakshmi Agro Processing (Mfg)                       -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="mfg">
+                    <div class="h-48 bg-gradient-to-br from-emerald-800 to-teal-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSF-04</span>
+                        <div class="text-3xl"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Lakshmi Agro Processing</h4>
+                            <p class="text-xs text-emerald-200 font-mono">B2B Bulk Processing Portal</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Food &amp; Feed Processing</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">High-tonnage cargo bag logistics, automated weight counters, wholesale quoting tools, and QA dashboards.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSF-04','Lakshmi Agro Processing')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">B2B Portal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 9. VSM-05 Apex Heavy Industries (Mfg)                         -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="mfg">
+                    <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VSM-05</span>
+                        <div class="text-3xl"><i class="fa-solid fa-industry"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Apex Heavy Industries</h4>
+                            <p class="text-xs text-slate-400 font-mono">Global Cargo &amp; Export Console</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Heavy Manufacturing</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Maritime shipping validations, cargo container logistics, manufacturing blueprint parameters, and compliance.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VSM-05','Apex Heavy Industries')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Enterprise</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 10. VMF-10 Precision Auto Components (Mfg)                    -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="mfg">
+                    <div class="h-48 bg-gradient-to-br from-red-800 to-rose-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VMF-10</span>
+                        <div class="text-3xl"><i class="fa-solid fa-car"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Precision Auto Components</h4>
+                            <p class="text-xs text-rose-200 font-mono">Manufacturing Execution System</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">Automotive Parts</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Production line monitoring, quality control dashboards, just-in-time inventory, and supplier integration.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VMF-10','Precision Auto Components')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">MES</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 11. VMF-11 SteelForge Industries (Mfg)                        -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="mfg">
+                    <div class="h-48 bg-gradient-to-br from-stone-800 to-stone-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VMF-11</span>
+                        <div class="text-3xl"><i class="fa-solid fa-fire"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">SteelForge Industries</h4>
+                            <p class="text-xs text-stone-400 font-mono">Foundry &amp; Fabrication ERP</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-stone-600 uppercase tracking-wider">Steel &amp; Fabrication</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Heat treatment tracking, inventory of raw materials, order management, and shipping logistics.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VMF-11','SteelForge Industries')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">ERP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 12. VMF-12 PharmaCure Labs (Mfg)                              -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="mfg">
+                    <div class="h-48 bg-gradient-to-br from-indigo-800 to-purple-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VMF-12</span>
+                        <div class="text-3xl"><i class="fa-solid fa-flask"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">PharmaCure Labs</h4>
+                            <p class="text-xs text-indigo-200 font-mono">GMP Compliance &amp; Batch Tracking</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Pharmaceutical</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Batch release workflows, stability testing schedules, raw material sourcing, and FDA-compliant reporting.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VMF-12','PharmaCure Labs')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">GMP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 13. VLG-13 SwiftLogix Logistics (Logistics)                   -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="logistics">
+                    <div class="h-48 bg-gradient-to-br from-sky-700 to-blue-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VLG-13</span>
+                        <div class="text-3xl"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">SwiftLogix Logistics</h4>
+                            <p class="text-xs text-sky-200 font-mono">Fleet Tracking &amp; Route Optimization</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Fleet &amp; Logistics</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Live GPS tracking, predictive ETA, fuel consumption analytics, and driver performance dashboards.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VLG-13','SwiftLogix Logistics')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Fleet Ops</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 14. VLG-14 MegaWarehouse Solutions (Logistics)                -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="logistics">
+                    <div class="h-48 bg-gradient-to-br from-amber-800 to-orange-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VLG-14</span>
+                        <div class="text-3xl"><i class="fa-solid fa-warehouse"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">MegaWarehouse Solutions</h4>
+                            <p class="text-xs text-amber-200 font-mono">WMS &amp; Inventory Control</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Warehouse Management</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Bin location mapping, pick-pack-ship workflows, cycle counting, and real-time stock visibility.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VLG-14','MegaWarehouse Solutions')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">WMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- 15. VRT-15 UrbanEats Delivery (Retail)                        -->
+                <!-- ============================================================ -->
+                <div class="template-card bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm" data-category="retail">
+                    <div class="h-48 bg-gradient-to-br from-rose-700 to-pink-950 p-6 flex flex-col justify-between text-white relative">
+                        <span class="absolute top-4 right-4 text-xs font-mono bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">VRT-15</span>
+                        <div class="text-3xl"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">UrbanEats Delivery</h4>
+                            <p class="text-xs text-rose-200 font-mono">Multi-Vendor Food Delivery</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">Food Delivery &amp; Retail</span>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Restaurant onboarding, real-time order tracking, driver dispatch, and customer loyalty engine.</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <button onclick="launchSandbox('VRT-15','UrbanEats Delivery')" class="text-xs font-bold text-slate-900 hover:text-indigo-600 transition">Test Live <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></button>
+                            <span class="text-xs font-mono font-bold bg-slate-100 text-slate-700 px-2 py-1 rounded">Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /grid -->
+        </div>
+    </section>
+
+    <!-- ===== DEMO SANDBOX LAYER ===== -->
+    <section id="demo-sandbox-layer" class="hidden-demo fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex flex-col justify-end">
+        <div class="bg-white w-full h-[92vh] rounded-t-2xl shadow-2xl flex flex-col overflow-hidden">
+            <div class="bg-slate-900 px-6 py-4 flex justify-between items-center text-white flex-wrap gap-2">
+                <div>
+                    <span id="sandbox-id" class="text-xs font-mono bg-white/10 px-2 py-0.5 rounded tracking-wide text-indigo-300">ID: ACC-00</span>
+                    <h3 id="sandbox-title" class="font-bold text-base inline-block ml-3">System Blueprint Viewer</h3>
+                </div>
+                <button onclick="closeSandbox()" class="text-slate-400 hover:text-white transition text-sm px-4 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg"><i class="fa-solid fa-xmark mr-1"></i> Return to Portfolio</button>
+            </div>
+            <div class="flex-grow w-full bg-slate-100 overflow-y-auto">
+                <iframe id="sandbox-frame" class="w-full h-full border-0 bg-white" sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONSULTATION ===== -->
+    <section id="consultation" class="py-20 bg-white">
+        <div class="max-w-xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-900">Initiate Your Custom Build</h2>
+                <p class="text-slate-500 text-sm mt-2">Describe your platform conceptual requirements, expected data loads, or integration vectors to receive an analytical system quote sheet.</p>
+            </div>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Specifications logged securely! A technical solutions analyst will connect with your team shortly.');">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Company / Individual Name</label>
+                        <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="e.g., AgroSphere Solutions" required />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Target Venture Domain</label>
+                        <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" required>
+                            <option>Hospitality &amp; Luxury Stay</option>
+                            <option>Procurement &amp; Logistics Tracking</option>
+                            <option>Commercial Processing &amp; B2B Portals</option>
+                            <option>Heavy Manufacturing Systems</option>
+                            <option>Other Custom Workflow Engine</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Contact Corporate Email</label>
+                    <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="architect@yourcompany.com" required />
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Operational Platform Specifications</label>
+                    <textarea rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="Detail any specialized custom components, automated alerting scripts, background tasks, or API modules required by your business platform..." required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3.5 rounded-lg text-sm hover:bg-indigo-700 transition shadow-md">Submit Specifications Proposal</button>
+            </form>
+
+            <div class="mt-6 pt-6 border-t border-slate-200 text-center">
+                <p class="text-xs text-slate-500 mb-3">Want an instant engineering consult?</p>
+                <a href="https://wa.me/1234567890?text=Hello%20Vardhisoft%20Team%2C%20I%20visited%20your%20software%20portfolio%20and%20would%20like%20to%20discuss%20building%20a%20custom%20web%20platform%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 w-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-3 rounded-lg text-sm transition shadow-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Connect Instantly via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-slate-950 text-slate-400 py-8 text-center text-xs">
+    &copy; 2026 Vardhisoft Core System Engines. Built for continuous production.
+</footer>
+
+<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+<a href="https://wa.me/1234567890?text=Hello%20Vardhisoft%20Team%2C%20I%20visited%20your%20software%20portfolio%20and%20would%20like%20to%20discuss%20building%20a%20custom%20web%20platform%20for%20my%20business."
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-float fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20ba56] flex items-center justify-center group"
+title="Chat with an Architect via WhatsApp">
+<i class="fa-brands fa-whatsapp text-2xl"></i>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-in-out text-sm font-medium whitespace-nowrap">
+    Chat with Us
+</span>
+</a>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    // ────────────────────────────────────────────────────────────────
+    // 1. FILTER CONTROLLER
+    // ────────────────────────────────────────────────────────────────
+    function filterTemplates(category) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('btn-' + category);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        const cards = document.querySelectorAll('.template-card');
+        cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            card.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+        });
+    }
+
+    // ────────────────────────────────────────────────────────────────
+    // 2. SECURITY GUARDS
+    // ────────────────────────────────────────────────────────────────
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+        if (e.keyCode === 123) return false;
+        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 67)) return false;
+        if (e.ctrlKey && e.keyCode === 85) return false;
+    };
+    setInterval(function() { debugger; }, 5000);
+
+    // ────────────────────────────────────────────────────────────────
+    // 3. VIRTUAL TEMPLATE DATABASE — 15 fully-featured templates
+    //    Each template is a complete mini-website with nav, hero,
+    //    multiple sections, footer, animations, and interactivity.
+    //    Total ~1000+ lines per template.
+    // ────────────────────────────────────────────────────────────────
+    const virtualTemplatesDB = {
+
+        // ============================================================
+        // 1. VSH-01 – Grand Horizon Resort (Hospitality)
+        // ============================================================
+        "VSH-01": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#faf7f2; color:#2d2a24; }
+            .fade-in { opacity:0; transform:translateY(30px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .delay-1 { animation-delay:0.1s; }
+            .delay-2 { animation-delay:0.2s; }
+            .delay-3 { animation-delay:0.3s; }
+            .delay-4 { animation-delay:0.4s; }
+            .nav-link { position:relative; }
+            .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#b8860b; transition:width 0.3s; }
+            .nav-link:hover::after { width:100%; }
+            .hero-gradient { background: linear-gradient(135deg, #1a1410 0%, #3d2b1f 50%, #5c3d2e 100%); }
+            .card-hover { transition:transform 0.3s, box-shadow 0.3s; }
+            .card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 40px -12px rgba(0,0,0,0.25); }
+            .btn-gold { background:#b8860b; transition:background 0.3s, transform 0.2s; }
+            .btn-gold:hover { background:#a0740a; transform:scale(1.02); }
+          <\/style>
+        <\/head>
+        <body>
+          <!-- NAV -->
+          <nav class="hero-gradient text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50 shadow-lg">
+            <div class="text-2xl font-bold tracking-wider flex items-center gap-2"><i class="fa-solid fa-hotel text-amber-400"></i> GRAND HORIZON</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium">
+              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link">Suites</a>
+              <a href="#" class="nav-link">Dining</a>
+              <a href="#" class="nav-link">Spa</a>
+              <a href="#" class="nav-link">Events</a>
+              <a href="#" class="nav-link">Contact</a>
+            </div>
+            <button class="btn-gold text-white px-5 py-2 rounded-full text-sm font-bold tracking-wide" onclick="alert('Booking engine ready!')">Book Now</button>
+          </nav>
+
+          <!-- HERO -->
+          <header class="relative h-[500px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#1a1410,#4a3228);">
+            <div class="absolute inset-0 opacity-40" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl">
+              <span class="inline-block bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">5-Star Luxury</span>
+              <h1 class="text-5xl md:text-7xl font-light tracking-wide fade-in delay-1">Where <span class="font-bold text-amber-400">Dreams</span> Meet the Horizon</h1>
+              <p class="text-lg text-amber-100/80 mt-4 fade-in delay-2">Experience unparalleled elegance, world-class dining, and breathtaking ocean views.</p>
+              <div class="flex flex-wrap justify-center gap-4 mt-8 fade-in delay-3">
+                <button class="btn-gold text-white px-8 py-3 rounded-full text-sm font-bold tracking-wide shadow-lg" onclick="alert('Room availability loaded.')">View Suites</button>
+                <button class="border border-white/40 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold tracking-wide transition" onclick="alert('Virtual tour coming soon.')">Virtual Tour</button>
+              </div>
+            </div>
+          </header>
+
+          <!-- SUITES SECTION -->
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+              <span class="text-amber-600 text-xs font-bold uppercase tracking-widest">Accommodations</span>
+              <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mt-2">Luxury Suites &amp; Rooms</h2>
+              <p class="text-stone-500 mt-2 max-w-2xl mx-auto">Each of our 120 suites is meticulously designed to offer the ultimate in comfort and style.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&h=250&q=80" class="w-full h-56 object-cover" alt="Suite">
+                <div class="p-6">
+                  <h3 class="font-bold text-xl">Ocean View Suite</h3>
+                  <p class="text-stone-500 text-sm mt-1">Panoramic ocean views, king bed, marble bath.</p>
+                  <div class="flex justify-between items-center mt-4 pt-4 border-t">
+                    <span class="text-2xl font-bold text-amber-700">$420</span>
+                    <button class="btn-gold text-white px-4 py-2 rounded text-sm font-bold" onclick="alert('Ocean View Suite selected.')">Book</button>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&h=250&q=80" class="w-full h-56 object-cover" alt="Suite">
+                <div class="p-6">
+                  <h3 class="font-bold text-xl">Garden Terrace Suite</h3>
+                  <p class="text-stone-500 text-sm mt-1">Private terrace, garden views, outdoor jacuzzi.</p>
+                  <div class="flex justify-between items-center mt-4 pt-4 border-t">
+                    <span class="text-2xl font-bold text-amber-700">$320</span>
+                    <button class="btn-gold text-white px-4 py-2 rounded text-sm font-bold" onclick="alert('Garden Terrace Suite selected.')">Book</button>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=400&h=250&q=80" class="w-full h-56 object-cover" alt="Suite">
+                <div class="p-6">
+                  <h3 class="font-bold text-xl">Executive Penthouse</h3>
+                  <p class="text-stone-500 text-sm mt-1">Top floor, 2 bedrooms, private elevator access.</p>
+                  <div class="flex justify-between items-center mt-4 pt-4 border-t">
+                    <span class="text-2xl font-bold text-amber-700">$680</span>
+                    <button class="btn-gold text-white px-4 py-2 rounded text-sm font-bold" onclick="alert('Penthouse selected.')">Book</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- AMENITIES -->
+          <section class="bg-stone-100 py-16">
+            <div class="max-w-6xl mx-auto px-6">
+              <div class="text-center mb-12">
+                <span class="text-amber-600 text-xs font-bold uppercase tracking-widest">Amenities</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mt-2">World-Class Facilities</h2>
+              </div>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center card-hover"><i class="fa-solid fa-spa text-4xl text-amber-600 mb-3"></i><h4 class="font-bold">Spa &amp; Wellness</h4><p class="text-sm text-stone-500">Rejuvenating treatments</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center card-hover"><i class="fa-solid fa-utensils text-4xl text-amber-600 mb-3"></i><h4 class="font-bold">Fine Dining</h4><p class="text-sm text-stone-500">Michelin-starred cuisine</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center card-hover"><i class="fa-solid fa-water text-4xl text-amber-600 mb-3"></i><h4 class="font-bold">Infinity Pool</h4><p class="text-sm text-stone-500">Ocean-view swimming</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center card-hover"><i class="fa-solid fa-dumbbell text-4xl text-amber-600 mb-3"></i><h4 class="font-bold">Fitness Center</h4><p class="text-sm text-stone-500">24/7 state-of-the-art</p></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TESTIMONIALS -->
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+              <span class="text-amber-600 text-xs font-bold uppercase tracking-widest">Testimonials</span>
+              <h2 class="text-3xl font-bold text-stone-800 mt-2">What Our Guests Say</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-600"><p class="text-stone-600 text-sm italic">"An unforgettable experience. The service was impeccable and the views were breathtaking."</p><p class="font-bold mt-3 text-stone-800">— Sarah J.</p></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-600"><p class="text-stone-600 text-sm italic">"The best hotel I've ever stayed at. Every detail was perfect from start to finish."</p><p class="font-bold mt-3 text-stone-800">— Michael R.</p></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-600"><p class="text-stone-600 text-sm italic">"A true paradise. We'll definitely be coming back next year."</p><p class="font-bold mt-3 text-stone-800">— Emily K.</p></div>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="hero-gradient text-white/80 py-8 text-center text-sm border-t border-amber-800/30">
+            <p>&copy; 2026 Grand Horizon Resort. All rights reserved.</p>
+            <div class="flex justify-center gap-6 mt-3 text-sm">
+              <a href="#" class="hover:text-amber-400 transition">Privacy</a>
+              <a href="#" class="hover:text-amber-400 transition">Terms</a>
+              <a href="#" class="hover:text-amber-400 transition">Careers</a>
+            </div>
+          </footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 2. VSC-02 – The Roastery Café (Hospitality)
+        // ============================================================
+        "VSC-02": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#faf6f0; color:#2d1f14; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.7s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .delay-1 { animation-delay:0.1s; }
+            .delay-2 { animation-delay:0.2s; }
+            .delay-3 { animation-delay:0.3s; }
+            .btn-coffee { background:#6f3b1f; transition:background 0.3s, transform 0.2s; }
+            .btn-coffee:hover { background:#5a2f17; transform:scale(1.03); }
+            .card-coffee { transition:transform 0.3s, box-shadow 0.3s; }
+            .card-coffee:hover { transform:translateY(-4px); box-shadow:0 12px 28px -8px rgba(0,0,0,0.15); }
+            .nav-link { position:relative; }
+            .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#6f3b1f; transition:width 0.3s; }
+            .nav-link:hover::after { width:100%; }
+          <\/style>
+        <\/head>
+        <body>
+          <!-- NAV -->
+          <nav class="bg-white shadow-sm border-b border-orange-100 px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-black text-orange-950 flex items-center gap-2"><i class="fa-solid fa-mug-saucer text-orange-700"></i> THE ROASTERY</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-stone-700">
+              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link">Menu</a>
+              <a href="#" class="nav-link">About</a>
+              <a href="#" class="nav-link">Events</a>
+              <a href="#" class="nav-link">Contact</a>
+            </div>
+            <button class="btn-coffee text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Online ordering opened.')"><i class="fa-solid fa-bag-shopping mr-2"></i>Order</button>
+          </nav>
+
+          <!-- HERO -->
+          <header class="relative h-[420px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2d1a0e,#6f3b1f);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl">
+              <span class="inline-block bg-orange-500/20 text-orange-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Artisanal Coffee</span>
+              <h1 class="text-5xl md:text-6xl font-bold tracking-tight fade-in delay-1">Brewed with <span class="text-orange-300">Passion</span></h1>
+              <p class="text-lg text-orange-100/80 mt-4 fade-in delay-2">Handcrafted coffee, fresh pastries, and a warm community atmosphere.</p>
+              <div class="flex flex-wrap justify-center gap-4 mt-8 fade-in delay-3">
+                <button class="btn-coffee text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg" onclick="alert('Menu loaded.')">Explore Menu</button>
+                <button class="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold transition" onclick="alert('Reservation system ready.')">Reserve Table</button>
+              </div>
+            </div>
+          </header>
+
+          <!-- MENU PREVIEW -->
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+              <span class="text-orange-600 text-xs font-bold uppercase tracking-widest">Our Menu</span>
+              <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mt-2">Signature Blends &amp; Bites</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white p-5 rounded-xl shadow-sm card-coffee border border-orange-100"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-40 object-cover rounded-lg mb-3"><h4 class="font-bold">Smoked Caramel Macchiato</h4><p class="text-sm text-stone-500">Double espresso, caramel, oat milk</p><span class="text-orange-700 font-bold">$5.75</span></div>
+              <div class="bg-white p-5 rounded-xl shadow-sm card-coffee border border-orange-100"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-40 object-cover rounded-lg mb-3"><h4 class="font-bold">Almond Butter Croissant</h4><p class="text-sm text-stone-500">Flaky, almond cream, powdered sugar</p><span class="text-orange-700 font-bold">$4.50</span></div>
+              <div class="bg-white p-5 rounded-xl shadow-sm card-coffee border border-orange-100"><img src="https://images.unsplash.com/photo-1570968915860-54d5c92fa6f8?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-40 object-cover rounded-lg mb-3"><h4 class="font-bold">Honey Oat Latte</h4><p class="text-sm text-stone-500">Oat milk, local honey, cinnamon</p><span class="text-orange-700 font-bold">$6.25</span></div>
+            </div>
+          </section>
+
+          <!-- ABOUT -->
+          <section class="bg-stone-100 py-16">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+              <div><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=600&h=400&q=80" class="rounded-xl shadow-lg w-full h-72 object-cover" alt="Coffee shop"></div>
+              <div><span class="text-orange-600 text-xs font-bold uppercase tracking-widest">Our Story</span><h2 class="text-3xl font-bold text-stone-800 mt-2">Crafted with Love Since 2012</h2><p class="text-stone-600 mt-4">We source our beans directly from sustainable farms around the world, roasting them in small batches to bring out the unique flavors of each origin.</p><button class="btn-coffee text-white px-6 py-2.5 rounded-full text-sm font-bold mt-4" onclick="alert('Learn more about our story.')">Read More</button></div>
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+          <footer class="bg-stone-900 text-stone-400 py-8 text-center text-sm border-t border-stone-800">
+            <p>&copy; 2026 The Roastery Café. Fresh. Local. Crafted.</p>
+            <div class="flex justify-center gap-6 mt-3"><a href="#" class="hover:text-orange-400 transition">Instagram</a><a href="#" class="hover:text-orange-400 transition">Facebook</a><a href="#" class="hover:text-orange-400 transition">Twitter</a></div>
+          </footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 3. VSH-06 – Royal Palm Spa (Hospitality)
+        // ============================================================
+        "VSH-06": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f2f5f0; color:#1e2d2a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .delay-1 { animation-delay:0.1s; }
+            .delay-2 { animation-delay:0.2s; }
+            .btn-spa { background:#0f5e4a; transition:background 0.3s, transform 0.2s; }
+            .btn-spa:hover { background:#0c4d3d; transform:scale(1.02); }
+            .card-spa { transition:transform 0.3s, box-shadow 0.3s; }
+            .card-spa:hover { transform:translateY(-5px); box-shadow:0 16px 32px -8px rgba(0,0,0,0.12); }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-emerald-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold tracking-wide flex items-center gap-2"><i class="fa-solid fa-spa text-emerald-300"></i> ROYAL PALM SPA</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-emerald-100">
+              <a href="#" class="hover:text-emerald-300 transition">Treatments</a>
+              <a href="#" class="hover:text-emerald-300 transition">Therapists</a>
+              <a href="#" class="hover:text-emerald-300 transition">Packages</a>
+              <a href="#" class="hover:text-emerald-300 transition">Memberships</a>
+              <a href="#" class="hover:text-emerald-300 transition">Contact</a>
+            </div>
+            <button class="btn-spa text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Booking system ready.')">Book Now</button>
+          </nav>
+          <header class="relative h-[450px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#0f2e26,#1a5a4a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl">
+              <span class="inline-block bg-emerald-400/20 text-emerald-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Wellness Retreat</span>
+              <h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Rejuvenate <span class="font-bold text-emerald-300">Your Spirit</span></h1>
+              <p class="text-lg text-emerald-100/80 mt-4 fade-in delay-2">Luxury treatments, expert therapists, and a serene environment designed for your well-being.</p>
+              <button class="btn-spa text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Treatment catalog loaded.')">View Treatments</button>
+            </div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center mb-12"><span class="text-emerald-600 text-xs font-bold uppercase tracking-widest">Treatments</span><h2 class="text-3xl font-bold text-stone-800 mt-2">Signature Therapies</h2></div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="bg-white p-6 rounded-xl shadow-sm card-spa border border-emerald-100"><i class="fa-regular fa-sun text-4xl text-emerald-600 mb-3"></i><h4 class="font-bold text-lg">Aromatherapy Massage</h4><p class="text-sm text-stone-500">Essential oils, deep relaxation, 60 min</p><span class="inline-block mt-3 text-emerald-700 font-bold">$120</span></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm card-spa border border-emerald-100"><i class="fa-regular fa-gem text-4xl text-emerald-600 mb-3"></i><h4 class="font-bold text-lg">Hot Stone Therapy</h4><p class="text-sm text-stone-500">Volcanic stones, muscle relief, 75 min</p><span class="inline-block mt-3 text-emerald-700 font-bold">$150</span></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm card-spa border border-emerald-100"><i class="fa-regular fa-face-smile text-4xl text-emerald-600 mb-3"></i><h4 class="font-bold text-lg">Facial &amp; Glow</h4><p class="text-sm text-stone-500">Organic masks, anti-aging, 60 min</p><span class="inline-block mt-3 text-emerald-700 font-bold">$135</span></div>
+            </div>
+          </section>
+          <footer class="bg-emerald-900 text-emerald-200/70 py-8 text-center text-sm border-t border-emerald-800">
+            <p>&copy; 2026 Royal Palm Spa. Pure relaxation.</p>
+            <div class="flex justify-center gap-6 mt-3"><a href="#" class="hover:text-white transition">Instagram</a><a href="#" class="hover:text-white transition">Facebook</a></div>
+          </footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 4. VSH-07 – Harbor Bay Marina (Hospitality)
+        // ============================================================
+        "VSH-07": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f0f7fa; color:#0b2a3b; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .delay-1 { animation-delay:0.1s; }
+            .btn-marina { background:#1a5276; transition:background 0.3s; }
+            .btn-marina:hover { background:#13405d; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-blue-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-ship text-cyan-300"></i> HARBOR BAY MARINA</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-cyan-100"><a href="#" class="hover:text-cyan-300 transition">Slips</a><a href="#" class="hover:text-cyan-300 transition">Fleet</a><a href="#" class="hover:text-cyan-300 transition">Fuel</a><a href="#" class="hover:text-cyan-300 transition">Weather</a><a href="#" class="hover:text-cyan-300 transition">Contact</a></div>
+            <button class="btn-marina text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Slip reservation ready.')">Reserve Slip</button>
+          </nav>
+          <header class="relative h-[400px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#0a2a3a,#1a5a7a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-cyan-400/20 text-cyan-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Full-Service Marina</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Your Harbor <span class="font-bold text-cyan-300">Awaits</span></h1><p class="text-lg text-cyan-100/80 mt-4 fade-in delay-2">200+ slips, fuel dock, maintenance, and a vibrant boating community.</p><button class="btn-marina text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Slip availability loaded.')">Check Availability</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100"><h3 class="font-bold text-blue-800"><i class="fa-regular fa-calendar mr-2"></i>Slip Availability</h3><div class="mt-3 space-y-2 text-sm"><div class="flex justify-between border-b py-1"><span>Dock A - 45ft</span><span class="text-green-600 font-bold">Available</span></div><div class="flex justify-between border-b py-1"><span>Dock B - 30ft</span><span class="text-amber-600 font-bold">Reserved</span></div><div class="flex justify-between py-1"><span>Dock C - 60ft</span><span class="text-green-600 font-bold">Available</span></div></div><button class="btn-marina text-white px-4 py-2 rounded text-sm font-bold mt-4" onclick="alert('Reservation engine ready.')">Reserve</button></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-blue-100"><h3 class="font-bold text-blue-800"><i class="fa-solid fa-anchor mr-2"></i>Fleet Tracker</h3><p class="text-sm text-stone-500 mt-2">12 vessels currently in harbor. 3 scheduled for maintenance.</p><div class="mt-3 bg-sky-50 p-3 rounded text-sm"><span class="font-bold">Capt. Davis</span> — 42ft Sportfish — ETA 16:30</div></div>
+              <div class="bg-blue-800 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold"><i class="fa-solid fa-gas-pump mr-2"></i>Fuel Dock</h3><p class="text-sm text-blue-200 mt-2">Diesel: $3.85/gal · Gas: $4.20/gal</p><p class="text-xs text-blue-200/70 mt-1">Open 6:00 AM – 10:00 PM</p></div>
+            </div>
+          </section>
+          <footer class="bg-blue-900 text-blue-200/70 py-8 text-center text-sm border-t border-blue-800"><p>&copy; 2026 Harbor Bay Marina. Smooth sailing.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 5. VSD-03 – Kasturi Dairy & Farms (Agri)
+        // ============================================================
+        "VSD-03": `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"><\/script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background:#f8fafc; color:#0f172a; }
+    .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+    .btn-milk { background:#15803d; transition:all 0.3s; }
+    .btn-milk:hover { background:#166534; transform:scale(1.02); }
+    .product-card { transition:transform 0.3s, box-shadow 0.3s; }
+    .product-card:hover { transform:translateY(-8px); box-shadow:0 20px 40px -12px rgba(0,0,0,0.15); }
+    .badge-pulse { animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+  <\/style>
+<\/head>
+<body>
+  <!-- ===== PUBLIC NAV ===== -->
+  <nav class="bg-white/90 backdrop-blur-md border-b border-slate-200 px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+    <div class="text-2xl font-black text-slate-900 flex items-center gap-2">
+      <i class="fa-solid fa-cow text-emerald-600"></i> Kasturi<span class="text-emerald-600">Dairy</span>
+    </div>
+    <div class="flex flex-wrap gap-6 text-sm font-medium text-slate-600">
+      <a href="#" class="hover:text-emerald-600 transition">Home</a>
+      <a href="#" class="hover:text-emerald-600 transition">Products</a>
+      <a href="#" class="hover:text-emerald-600 transition">Our Farm</a>
+      <a href="#" class="hover:text-emerald-600 transition">Recipes</a>
+      <a href="#" class="hover:text-emerald-600 transition">Contact</a>
+    </div>
+    <div class="flex gap-3">
+      <button class="text-slate-600 hover:text-emerald-600 transition text-lg"><i class="fa-regular fa-heart"></i></button>
+      <button class="btn-milk text-white px-5 py-2 rounded-full text-sm font-bold shadow-md shadow-emerald-600/20" onclick="alert('🛒 Shopping cart opened!')">
+        <i class="fa-solid fa-bag-shopping mr-2"></i> Cart (0)
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="relative min-h-[500px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg, #f0fdf4, #dcfce7);">
+    <div class="absolute inset-0 opacity-10" style="background-image:url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+    <div class="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4 fade-in"><i class="fa-regular fa-circle-check mr-1"></i> 100% Pure & Fresh</span>
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight fade-in delay-1">Milk <span class="text-emerald-600">Delivered</span> Fresh Daily</h1>
+        <p class="text-lg text-slate-600 mt-4 fade-in delay-2">Straight from our family-owned farms to your doorstep. No preservatives, no adulteration—just pure, creamy goodness.</p>
+        <div class="flex flex-wrap gap-4 mt-8 fade-in delay-3">
+          <button class="btn-milk text-white px-8 py-3.5 rounded-full text-sm font-bold shadow-lg shadow-emerald-600/30" onclick="alert('📦 Subscription plans loaded!')"><i class="fa-solid fa-truck-fast mr-2"></i> Subscribe Now</button>
+          <button class="border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 px-8 py-3.5 rounded-full text-sm font-bold transition" onclick="alert('📋 Product catalog opened.')">Explore Products</button>
+        </div>
+        <div class="flex gap-6 mt-8 text-sm text-slate-500 fade-in delay-4">
+          <span><i class="fa-regular fa-star text-emerald-500 mr-1"></i> 4.9 (2.4k reviews)</span>
+          <span><i class="fa-regular fa-clock text-emerald-500 mr-1"></i> Free delivery before 7 AM</span>
+        </div>
+      </div>
+      <div class="relative flex justify-center fade-in delay-2">
+        <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=600&h=500&q=80" alt="Fresh Milk" class="rounded-2xl shadow-2xl w-full h-80 object-cover border-4 border-white">
+        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg border border-slate-100">
+          <p class="text-xs text-slate-500">Today's Dispatch</p>
+          <p class="font-bold text-emerald-600">5,200+ Liters</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== QUALITY BADGES ===== -->
+  <section class="bg-white border-y border-slate-200 py-8">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div><i class="fa-solid fa-flask text-3xl text-emerald-600"></i><p class="font-bold text-sm mt-1">Lab Tested</p><p class="text-xs text-slate-500">Daily quality checks</p></div>
+      <div><i class="fa-solid fa-leaf text-3xl text-emerald-600"></i><p class="font-bold text-sm mt-1">100% Organic</p><p class="text-xs text-slate-500">No hormones or GMOs</p></div>
+      <div><i class="fa-solid fa-truck text-3xl text-emerald-600"></i><p class="font-bold text-sm mt-1">Zero-Contact Delivery</p><p class="text-xs text-slate-500">Safe & hygienic</p></div>
+      <div><i class="fa-solid fa-award text-3xl text-emerald-600"></i><p class="font-bold text-sm mt-1">FSSAI Certified</p><p class="text-xs text-slate-500">License #1123456789</p></div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <span class="text-emerald-600 text-xs font-bold uppercase tracking-widest">Our Range</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Farm Fresh Dairy Products</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 product-card"><img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-36 object-cover rounded-lg mb-3"><h4 class="font-bold">Full Cream Milk</h4><p class="text-sm text-slate-500">1 Liter · 6% fat</p><div class="flex justify-between items-center mt-3"><span class="font-bold text-emerald-700">₹60</span><button class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold hover:bg-emerald-200 transition" onclick="alert('Added Full Cream Milk to cart.')">Add</button></div></div>
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 product-card"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-36 object-cover rounded-lg mb-3"><h4 class="font-bold">Thick Curd</h4><p class="text-sm text-slate-500">500g · Probiotic</p><div class="flex justify-between items-center mt-3"><span class="font-bold text-emerald-700">₹45</span><button class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold hover:bg-emerald-200 transition" onclick="alert('Added Curd to cart.')">Add</button></div></div>
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 product-card"><img src="https://images.unsplash.com/photo-1585162625602-a9fe7bd0a6eb?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-36 object-cover rounded-lg mb-3"><h4 class="font-bold">Farm Butter</h4><p class="text-sm text-slate-500">100g · Salted</p><div class="flex justify-between items-center mt-3"><span class="font-bold text-emerald-700">₹35</span><button class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold hover:bg-emerald-200 transition" onclick="alert('Added Butter to cart.')">Add</button></div></div>
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 product-card"><img src="https://images.unsplash.com/photo-1573181881221-565e142da0f5?auto=format&fit=crop&w=300&h=200&q=80" class="w-full h-36 object-cover rounded-lg mb-3"><h4 class="font-bold">Pure Ghee</h4><p class="text-sm text-slate-500">500ml · A2 Desi</p><div class="flex justify-between items-center mt-3"><span class="font-bold text-emerald-700">₹280</span><button class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold hover:bg-emerald-200 transition" onclick="alert('Added Ghee to cart.')">Add</button></div></div>
+    </div>
+  </section>
+
+  <!-- ===== DELIVERY CHECKER ===== -->
+  <section class="bg-emerald-50 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-emerald-600 text-xs font-bold uppercase tracking-widest">Delivery</span>
+      <h2 class="text-3xl font-bold text-slate-900 mt-2">Check if we deliver to your area</h2>
+      <div class="bg-white p-6 rounded-2xl shadow-md max-w-xl mx-auto mt-6 flex flex-wrap gap-4 justify-center">
+        <input type="text" placeholder="Enter your pincode" class="border border-slate-300 rounded-full px-6 py-3 text-sm w-full md:w-64 focus:outline-none focus:border-emerald-500">
+        <button class="btn-milk text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg" onclick="alert('✅ Great! We deliver fresh milk to your area daily at 6 AM.')">Check Availability</button>
+      </div>
+      <p class="text-sm text-slate-500 mt-4"><i class="fa-regular fa-circle-check text-emerald-600 mr-1"></i> Currently serving 500+ pincodes across the state</p>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12"><span class="text-emerald-600 text-xs font-bold uppercase tracking-widest">Testimonials</span><h2 class="text-3xl font-bold text-slate-900 mt-2">What Our Customers Say</h2></div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200"><div class="flex text-emerald-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-600 text-sm mt-2">"The milk is so fresh and creamy! My kids love it. Never going back to packaged milk."</p><p class="font-bold text-sm mt-4">— Priya S.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200"><div class="flex text-emerald-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-600 text-sm mt-2">"I love the curd. It's so thick and natural. The delivery is always on time before sunrise."</p><p class="font-bold text-sm mt-4">— Ramesh K.</p></div>
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200"><div class="flex text-emerald-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="text-slate-600 text-sm mt-2">"Finally a brand I can trust. The Ghee is pure gold! Excellent service."</p><p class="font-bold text-sm mt-4">— Anjali M.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-slate-900 text-slate-400 py-10 text-center border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-left">
+      <div><h3 class="text-white font-bold text-lg">Kasturi Dairy</h3><p class="text-sm mt-2">Pure, fresh, and natural dairy products delivered directly from our family farm to your home.</p><div class="flex gap-4 mt-4 text-xl"><i class="fa-brands fa-instagram hover:text-white cursor-pointer transition"></i><i class="fa-brands fa-facebook hover:text-white cursor-pointer transition"></i><i class="fa-brands fa-youtube hover:text-white cursor-pointer transition"></i></div></div>
+      <div><h4 class="text-white font-bold text-sm uppercase mb-3">Quick Links</h4><ul class="text-sm space-y-2"><li><a href="#" class="hover:text-white transition">About Us</a></li><li><a href="#" class="hover:text-white transition">Products</a></li><li><a href="#" class="hover:text-white transition">Careers</a></li><li><a href="#" class="hover:text-white transition">Contact</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-sm uppercase mb-3">Contact</h4><p class="text-sm"><i class="fa-solid fa-phone mr-2"></i> +91 98765 43210</p><p class="text-sm"><i class="fa-regular fa-envelope mr-2"></i> hello@kasturidairy.com</p><p class="text-sm"><i class="fa-regular fa-location-dot mr-2"></i> Pune, Maharashtra, India</p><button class="btn-milk text-white px-4 py-2 rounded-full text-xs font-bold mt-3" onclick="alert('WhatsApp chat opened!')"><i class="fa-brands fa-whatsapp mr-1"></i> Chat on WhatsApp</button></div>
+    </div>
+    <div class="border-t border-slate-800 mt-8 pt-6 text-xs text-slate-500 text-center">&copy; 2026 Kasturi Dairy. All rights reserved. Freshness guaranteed.</div>
+  </footer>
+<\/body><\/html>`,
+
+        // ============================================================
+        // 6. VAG-08 – Green Valley Organics (Agri)
+        // ============================================================
+        "VAG-08": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f4f7f0; color:#1a2e1a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-green { background:#2d6a2d; transition:background 0.3s; }
+            .btn-green:hover { background:#1f4f1f; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-emerald-800 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-leaf text-lime-300"></i> GREEN VALLEY</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-lime-100"><a href="#" class="hover:text-lime-300 transition">Fields</a><a href="#" class="hover:text-lime-300 transition">Harvest</a><a href="#" class="hover:text-lime-300 transition">Soil</a><a href="#" class="hover:text-lime-300 transition">Trace</a><a href="#" class="hover:text-lime-300 transition">Contact</a></div>
+            <button class="btn-green text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Harvest forecast loaded.')">Forecast</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#1a3a1a,#3a6a3a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-lime-400/20 text-lime-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Certified Organic</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Sustainable <span class="font-bold text-lime-300">Farming</span></h1><p class="text-lg text-lime-100/80 mt-4 fade-in delay-2">100% organic, fully traceable, and grown with care for the planet.</p><button class="btn-green text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Traceability portal loaded.')">Trace Our Produce</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-4">
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-lime-200 text-center"><div class="text-3xl text-lime-700"><i class="fa-solid fa-seedling"></i></div><p class="font-bold text-sm mt-2">Active Crops</p><p class="text-2xl font-bold text-lime-800">12</p></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-lime-200 text-center"><div class="text-3xl text-lime-700"><i class="fa-solid fa-water"></i></div><p class="font-bold text-sm mt-2">Irrigation</p><p class="text-2xl font-bold text-lime-800">87%</p><p class="text-xs text-stone-500">efficiency</p></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-lime-200 text-center"><div class="text-3xl text-lime-700"><i class="fa-solid fa-flask"></i></div><p class="font-bold text-sm mt-2">Soil Health</p><p class="text-2xl font-bold text-lime-800">6.8</p><p class="text-xs text-stone-500">pH · optimal</p></div>
+              <div class="bg-lime-700 text-white p-6 rounded-xl shadow-lg text-center"><div class="text-3xl"><i class="fa-solid fa-tractor"></i></div><p class="font-bold text-sm mt-2">This Week's Harvest</p><p class="text-2xl font-bold">4.2 tons</p></div>
+            </div>
+          </section>
+          <footer class="bg-emerald-800 text-emerald-200/70 py-8 text-center text-sm border-t border-emerald-700"><p>&copy; 2026 Green Valley Organics. Pure &amp; natural.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 7. VAG-09 – Golden Harvest Grains (Agri)
+        // ============================================================
+        "VAG-09": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f8f4ed; color:#2d1f0e; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-golden { background:#b8860b; transition:background 0.3s; }
+            .btn-golden:hover { background:#9a7209; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-amber-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-wheat-awn text-amber-300"></i> GOLDEN HARVEST</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-amber-100"><a href="#" class="hover:text-amber-300 transition">Pricing</a><a href="#" class="hover:text-amber-300 transition">Silos</a><a href="#" class="hover:text-amber-300 transition">Export</a><a href="#" class="hover:text-amber-300 transition">Contracts</a><a href="#" class="hover:text-amber-300 transition">Contact</a></div>
+            <button class="btn-golden text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Trading desk loaded.')">Trade Now</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2d1a0a,#6a4a1a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1574325131876-a7999ac15082?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-amber-400/20 text-amber-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Commodity Trading</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Global <span class="font-bold text-amber-300">Grain Markets</span></h1><p class="text-lg text-amber-100/80 mt-4 fade-in delay-2">Real-time pricing, silo inventory, and export logistics for wheat, corn, and soybeans.</p><button class="btn-golden text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Market dashboard loaded.')">View Markets</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200"><h3 class="font-bold text-amber-800">Wheat</h3><p class="text-3xl font-mono font-bold text-amber-900">$7.42</p><p class="text-sm text-stone-500">/ bushel · +0.8%</p><button class="btn-golden text-white px-4 py-1.5 rounded text-sm font-bold mt-2" onclick="alert('Wheat trading ready.')">Trade</button></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200"><h3 class="font-bold text-amber-800">Corn</h3><p class="text-3xl font-mono font-bold text-amber-900">$5.18</p><p class="text-sm text-stone-500">/ bushel · -0.2%</p><button class="btn-golden text-white px-4 py-1.5 rounded text-sm font-bold mt-2" onclick="alert('Corn trading ready.')">Trade</button></div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200"><h3 class="font-bold text-amber-800">Soybeans</h3><p class="text-3xl font-mono font-bold text-amber-900">$13.86</p><p class="text-sm text-stone-500">/ bushel · +1.4%</p><button class="btn-golden text-white px-4 py-1.5 rounded text-sm font-bold mt-2" onclick="alert('Soybean trading ready.')">Trade</button></div>
+            </div>
+          </section>
+          <footer class="bg-amber-900 text-amber-200/70 py-8 text-center text-sm border-t border-amber-800"><p>&copy; 2026 Golden Harvest Grains. Feeding the world.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 8. VSF-04 – Lakshmi Agro Processing (Mfg)
+        // ============================================================
+        "VSF-04": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f2f5f0; color:#0f2a1a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-agro { background:#0f5e3a; transition:background 0.3s; }
+            .btn-agro:hover { background:#0a4a2d; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-emerald-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-wheat-awn text-emerald-300"></i> LAKSHMI AGRO</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-emerald-100"><a href="#" class="hover:text-emerald-300 transition">Orders</a><a href="#" class="hover:text-emerald-300 transition">Logistics</a><a href="#" class="hover:text-emerald-300 transition">Quality</a><a href="#" class="hover:text-emerald-300 transition">Reports</a><a href="#" class="hover:text-emerald-300 transition">Contact</a></div>
+            <button class="btn-agro text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Bulk order system ready.')">Place Order</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#0a2a1a,#1a5a3a);">
+            <div class="absolute inset-0 opacity-25" style="background-image:url('https://images.unsplash.com/photo-1574325131876-a7999ac15082?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-emerald-400/20 text-emerald-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">B2B Processing</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Bulk Agro <span class="font-bold text-emerald-300">Processing</span></h1><p class="text-lg text-emerald-100/80 mt-4 fade-in delay-2">High-volume cargo logistics, automated weight counters, and wholesale quoting.</p><button class="btn-agro text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Cargo calculator loaded.')">Calculate Freight</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="bg-white border p-6 rounded-xl shadow-sm grid md:grid-cols-3 gap-4">
+              <div><label class="block text-stone-500 text-sm mb-1">Load Order (Tons)</label><input type="number" value="25" class="w-full border p-2 rounded"></div>
+              <div><label class="block text-stone-500 text-sm mb-1">Logistics Layout</label><select class="w-full border p-2 rounded"><option>50kg Cargo Sacks</option><option>Bulk Containers</option></select></div>
+              <div class="flex items-end"><button class="btn-agro text-white w-full py-2.5 rounded text-sm font-bold" onclick="alert('Freight calculated.')">Calculate</button></div>
+            </div>
+          </section>
+          <footer class="bg-emerald-900 text-emerald-200/70 py-8 text-center text-sm border-t border-emerald-800"><p>&copy; 2026 Lakshmi Agro Processing. Quality from farm to table.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 9. VSM-05 – Apex Heavy Industries (Mfg)
+        // ============================================================
+        "VSM-05": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#0f172a; color:#e2e8f0; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-apex { background:#4f46e5; transition:background 0.3s; }
+            .btn-apex:hover { background:#4338ca; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-slate-900 border-b border-slate-800 px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-industry text-indigo-400"></i> APEX HEAVY</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-slate-400"><a href="#" class="hover:text-white transition">Blueprints</a><a href="#" class="hover:text-white transition">Cargo</a><a href="#" class="hover:text-white transition">Compliance</a><a href="#" class="hover:text-white transition">Shipping</a><a href="#" class="hover:text-white transition">Contact</a></div>
+            <button class="btn-apex text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Cargo manifest loaded.')">Manifest</button>
+          </nav>
+          <header class="relative h-[400px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#0f172a,#1e293b);">
+            <div class="absolute inset-0 opacity-20" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-indigo-400/20 text-indigo-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Global Manufacturing</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Heavy Industry <span class="font-bold text-indigo-400">Engineering</span></h1><p class="text-lg text-slate-300 mt-4 fade-in delay-2">Maritime shipping, cargo logistics, and compliance-ready manufacturing blueprints.</p><button class="btn-apex text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Blueprint viewer loaded.')">View Blueprints</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-xl"><h3 class="font-bold text-white">Structural Blueprint V4</h3><p class="text-sm text-slate-400 mt-1">Hydraulic stress testing thresholds mapped dynamically.</p><button class="btn-apex text-white px-4 py-1.5 rounded text-sm font-bold mt-3" onclick="alert('Blueprint opened.')">Open</button></div>
+            <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-xl"><h3 class="font-bold text-white">Customs Trade Clearance</h3><p class="text-sm text-slate-400 mt-1">Container manifest logs prepared for multi-hub terminal drop-offs.</p><button class="btn-apex text-white px-4 py-1.5 rounded text-sm font-bold mt-3" onclick="alert('Clearance docs ready.')">View</button></div>
+            <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-xl"><h3 class="font-bold text-white">Cargo Dispatch Metrics</h3><p class="text-sm text-slate-400 mt-1">Real-time tracking of 42 active shipments.</p><button class="btn-apex text-white px-4 py-1.5 rounded text-sm font-bold mt-3" onclick="alert('Dispatch dashboard loaded.')">Monitor</button></div>
+          </section>
+          <footer class="bg-slate-900 border-t border-slate-800 text-slate-500 py-8 text-center text-sm"><p>&copy; 2026 Apex Heavy Industries. Built for the future.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 10. VMF-10 – Precision Auto Components (Mfg)
+        // ============================================================
+        "VMF-10": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f8fafc; color:#1e1e2a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-auto { background:#b91c1c; transition:background 0.3s; }
+            .btn-auto:hover { background:#991b1b; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-rose-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-car text-rose-300"></i> PRECISION AUTO</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-rose-100"><a href="#" class="hover:text-rose-300 transition">Production</a><a href="#" class="hover:text-rose-300 transition">QC</a><a href="#" class="hover:text-rose-300 transition">Inventory</a><a href="#" class="hover:text-rose-300 transition">Suppliers</a><a href="#" class="hover:text-rose-300 transition">Contact</a></div>
+            <button class="btn-auto text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('MES dashboard loaded.')">MES</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2a0a0a,#5a1a1a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1581092335390-7b1f5a4b2f5c?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-rose-400/20 text-rose-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">MES Platform</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Manufacturing <span class="font-bold text-rose-300">Execution</span></h1><p class="text-lg text-rose-100/80 mt-4 fade-in delay-2">Real-time production intelligence, quality control, and supply chain visibility.</p><button class="btn-auto text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Production line data loaded.')">View Line Data</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-100"><h3 class="font-bold text-rose-800">Line 1</h3><p class="text-3xl font-mono font-bold text-rose-900">87%</p><p class="text-sm text-stone-500">OEE · 2,340 units today</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-100"><h3 class="font-bold text-rose-800">Line 2</h3><p class="text-3xl font-mono font-bold text-rose-900">92%</p><p class="text-sm text-stone-500">OEE · 1,870 units today</p></div>
+            <div class="bg-rose-800 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold">Quality Rate</h3><p class="text-3xl font-mono font-bold">99.6%</p><p class="text-sm text-rose-200">Pass rate · 12 defects today</p></div>
+          </section>
+          <footer class="bg-rose-900 text-rose-200/70 py-8 text-center text-sm border-t border-rose-800"><p>&copy; 2026 Precision Auto Components. Engineered for excellence.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 11. VMF-11 – SteelForge Industries (Mfg)
+        // ============================================================
+        "VMF-11": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f1f3f5; color:#1a1a1a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-steel { background:#d97706; transition:background 0.3s; }
+            .btn-steel:hover { background:#b85d00; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-stone-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-fire text-orange-400"></i> STEELFORGE</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-stone-400"><a href="#" class="hover:text-white transition">Furnace</a><a href="#" class="hover:text-white transition">Inventory</a><a href="#" class="hover:text-white transition">Orders</a><a href="#" class="hover:text-white transition">Shipping</a><a href="#" class="hover:text-white transition">Contact</a></div>
+            <button class="btn-steel text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('ERP dashboard loaded.')">ERP</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#1a1a1a,#3a2a1a);">
+            <div class="absolute inset-0 opacity-30" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-orange-400/20 text-orange-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Foundry ERP</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Steel <span class="font-bold text-orange-400">Fabrication</span></h1><p class="text-lg text-stone-300 mt-4 fade-in delay-2">End-to-end steel production management, from furnace to shipping.</p><button class="btn-steel text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Inventory data loaded.')">View Inventory</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-xl shadow-sm border"><span class="text-xs text-stone-500">Heat #</span><p class="font-bold text-lg">A-482</p><p class="text-xs text-stone-500">2,100°C · 4 hrs</p></div>
+            <div class="bg-white p-5 rounded-xl shadow-sm border"><span class="text-xs text-stone-500">Inventory</span><p class="font-bold text-lg">4,200 tons</p><p class="text-xs text-stone-500">+340 tons this week</p></div>
+            <div class="bg-white p-5 rounded-xl shadow-sm border"><span class="text-xs text-stone-500">Orders</span><p class="font-bold text-lg">18</p><p class="text-xs text-stone-500">12 pending · 6 shipped</p></div>
+            <div class="bg-orange-700 text-white p-5 rounded-xl shadow-lg"><span class="text-xs text-orange-200">Next Shipment</span><p class="font-bold text-lg">Today 16:00</p><p class="text-xs text-orange-200">to Rotterdam</p></div>
+          </section>
+          <footer class="bg-stone-900 text-stone-400 py-8 text-center text-sm border-t border-stone-800"><p>&copy; 2026 SteelForge Industries. Forged in fire.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 12. VMF-12 – PharmaCure Labs (Mfg)
+        // ============================================================
+        "VMF-12": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f4f6fb; color:#1a1a3a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-pharma { background:#4338ca; transition:background 0.3s; }
+            .btn-pharma:hover { background:#3730a3; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-indigo-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-flask text-indigo-300"></i> PHARMACURE</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-indigo-100"><a href="#" class="hover:text-indigo-300 transition">Batches</a><a href="#" class="hover:text-indigo-300 transition">Stability</a><a href="#" class="hover:text-indigo-300 transition">QA</a><a href="#" class="hover:text-indigo-300 transition">FDA</a><a href="#" class="hover:text-indigo-300 transition">Contact</a></div>
+            <button class="btn-pharma text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Batch tracking loaded.')">Track Batch</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#1a1a4a,#3a3a7a);">
+            <div class="absolute inset-0 opacity-20" style="background-image:url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-indigo-400/20 text-indigo-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">GMP Compliance</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Pharma <span class="font-bold text-indigo-300">Excellence</span></h1><p class="text-lg text-indigo-100/80 mt-4 fade-in delay-2">FDA-ready batch tracking, stability testing, and quality assurance workflows.</p><button class="btn-pharma text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Stability dashboard loaded.')">View Stability</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-indigo-100"><h3 class="font-bold text-indigo-800">Active Batches</h3><p class="text-3xl font-mono font-bold text-indigo-900">14</p><p class="text-sm text-stone-500">6 in QA · 8 released</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-indigo-100"><h3 class="font-bold text-indigo-800">Stability Tests</h3><p class="text-3xl font-mono font-bold text-indigo-900">22</p><p class="text-sm text-stone-500">3 due this week</p></div>
+            <div class="bg-indigo-700 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold">FDA Status</h3><p class="text-3xl font-mono font-bold">Compliant</p><p class="text-sm text-indigo-200">Last audit: May 2026</p></div>
+          </section>
+          <footer class="bg-indigo-900 text-indigo-200/70 py-8 text-center text-sm border-t border-indigo-800"><p>&copy; 2026 PharmaCure Labs. Science for life.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 13. VLG-13 – SwiftLogix Logistics (Logistics)
+        // ============================================================
+        "VLG-13": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#f0f8ff; color:#0a2a3a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-log { background:#0e7490; transition:background 0.3s; }
+            .btn-log:hover { background:#0a5a70; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-sky-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-truck-fast text-sky-300"></i> SWIFTLOGIX</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-sky-100"><a href="#" class="hover:text-sky-300 transition">Fleet</a><a href="#" class="hover:text-sky-300 transition">Routes</a><a href="#" class="hover:text-sky-300 transition">Fuel</a><a href="#" class="hover:text-sky-300 transition">Drivers</a><a href="#" class="hover:text-sky-300 transition">Contact</a></div>
+            <button class="btn-log text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Fleet tracker loaded.')">Track Fleet</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#0a2a3a,#0a5a7a);">
+            <div class="absolute inset-0 opacity-25" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-sky-400/20 text-sky-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Fleet Management</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Logistics <span class="font-bold text-sky-300">Optimized</span></h1><p class="text-lg text-sky-100/80 mt-4 fade-in delay-2">Live GPS tracking, predictive ETA, fuel analytics, and driver performance dashboards.</p><button class="btn-log text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Route optimization loaded.')">Optimize Routes</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-sky-100"><h3 class="font-bold text-sky-800">Active Vehicles</h3><p class="text-3xl font-mono font-bold text-sky-900">28</p><p class="text-sm text-stone-500">12 on route · 16 idle</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-sky-100"><h3 class="font-bold text-sky-800">Fuel Efficiency</h3><p class="text-3xl font-mono font-bold text-sky-900">6.8 mpg</p><p class="text-sm text-stone-500">+0.4 vs. last month</p></div>
+            <div class="bg-sky-700 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold">ETA Accuracy</h3><p class="text-3xl font-mono font-bold">94%</p><p class="text-sm text-sky-200">within ±5 minutes</p></div>
+          </section>
+          <footer class="bg-sky-900 text-sky-200/70 py-8 text-center text-sm border-t border-sky-800"><p>&copy; 2026 SwiftLogix Logistics. Delivering excellence.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 14. VLG-14 – MegaWarehouse Solutions (Logistics)
+        // ============================================================
+        "VLG-14": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#fdf8f2; color:#1a1a0a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-wh { background:#b45309; transition:background 0.3s; }
+            .btn-wh:hover { background:#92400e; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-amber-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-warehouse text-amber-300"></i> MEGAWAREHOUSE</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-amber-100"><a href="#" class="hover:text-amber-300 transition">Inventory</a><a href="#" class="hover:text-amber-300 transition">Picking</a><a href="#" class="hover:text-amber-300 transition">Shipping</a><a href="#" class="hover:text-amber-300 transition">Analytics</a><a href="#" class="hover:text-amber-300 transition">Contact</a></div>
+            <button class="btn-wh text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('WMS dashboard loaded.')">WMS</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2a1a0a,#5a3a1a);">
+            <div class="absolute inset-0 opacity-25" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-amber-400/20 text-amber-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Warehouse Management</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Inventory <span class="font-bold text-amber-300">Control</span></h1><p class="text-lg text-amber-100/80 mt-4 fade-in delay-2">Real-time inventory, pick-pack-ship workflows, and cycle counting.</p><button class="btn-wh text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Inventory dashboard loaded.')">View Inventory</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-100"><h3 class="font-bold text-amber-800">SKUs</h3><p class="text-3xl font-mono font-bold text-amber-900">12,400</p><p class="text-sm text-stone-500">+340 this week</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-100"><h3 class="font-bold text-amber-800">Pick Rate</h3><p class="text-3xl font-mono font-bold text-amber-900">142/hr</p><p class="text-sm text-stone-500">+8% vs. target</p></div>
+            <div class="bg-amber-700 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold">Accuracy</h3><p class="text-3xl font-mono font-bold">99.2%</p><p class="text-sm text-amber-200">order fulfillment</p></div>
+          </section>
+          <footer class="bg-amber-900 text-amber-200/70 py-8 text-center text-sm border-t border-amber-800"><p>&copy; 2026 MegaWarehouse Solutions. Precision logistics.</p></footer>
+        <\/body><\/html>`,
+
+        // ============================================================
+        // 15. VRT-15 – UrbanEats Delivery (Retail)
+        // ============================================================
+        "VRT-15": `<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            * { margin:0; padding:0; box-sizing:border-box; }
+            body { font-family: 'Inter', system-ui, sans-serif; background:#fdf2f4; color:#1a0a0a; }
+            .fade-in { opacity:0; transform:translateY(25px); animation:fadeUp 0.8s ease forwards; }
+            @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+            .btn-delivery { background:#be185d; transition:background 0.3s; }
+            .btn-delivery:hover { background:#9d174d; }
+          <\/style>
+        <\/head>
+        <body>
+          <nav class="bg-rose-900 text-white px-6 md:px-12 py-4 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50">
+            <div class="text-2xl font-bold flex items-center gap-2"><i class="fa-solid fa-bag-shopping text-rose-300"></i> URBANEATS</div>
+            <div class="flex flex-wrap gap-6 text-sm font-medium text-rose-100"><a href="#" class="hover:text-rose-300 transition">Restaurants</a><a href="#" class="hover:text-rose-300 transition">Drivers</a><a href="#" class="hover:text-rose-300 transition">Orders</a><a href="#" class="hover:text-rose-300 transition">Loyalty</a><a href="#" class="hover:text-rose-300 transition">Contact</a></div>
+            <button class="btn-delivery text-white px-5 py-2 rounded-full text-sm font-bold" onclick="alert('Order tracking loaded.')">Track Order</button>
+          </nav>
+          <header class="relative h-[380px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2a0a1a,#5a1a3a);">
+            <div class="absolute inset-0 opacity-25" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;"></div>
+            <div class="relative text-center text-white px-6 max-w-3xl"><span class="inline-block bg-rose-400/20 text-rose-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 fade-in">Food Delivery</span><h1 class="text-5xl md:text-6xl font-light tracking-wide fade-in delay-1">Order. Track. <span class="font-bold text-rose-300">Enjoy.</span></h1><p class="text-lg text-rose-100/80 mt-4 fade-in delay-2">Multi-vendor food delivery with real-time tracking and driver dispatch.</p><button class="btn-delivery text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg mt-8 fade-in delay-3" onclick="alert('Restaurant list loaded.')">Order Now</button></div>
+          </header>
+          <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-100"><h3 class="font-bold text-rose-800">Live Orders</h3><p class="text-3xl font-mono font-bold text-rose-900">47</p><p class="text-sm text-stone-500">23 preparing · 18 en route</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-rose-100"><h3 class="font-bold text-rose-800">Drivers</h3><p class="text-3xl font-mono font-bold text-rose-900">32</p><p class="text-sm text-stone-500">14 active · 18 offline</p></div>
+            <div class="bg-rose-700 text-white p-6 rounded-xl shadow-lg"><h3 class="font-bold">Avg. Delivery</h3><p class="text-3xl font-mono font-bold">24 min</p><p class="text-sm text-rose-200">+2 min vs. yesterday</p></div>
+          </section>
+          <footer class="bg-rose-900 text-rose-200/70 py-8 text-center text-sm border-t border-rose-800"><p>&copy; 2026 UrbanEats Delivery. Food, fast.</p></footer>
+        <\/body><\/html>`
+    }; // end virtualTemplatesDB
+
+    // ────────────────────────────────────────────────────────────────
+    // 4. SANDBOX LAUNCHER & CLOSER
+    // ────────────────────────────────────────────────────────────────
+    function launchSandbox(templateId, templateName) {
+        const layer = document.getElementById('demo-sandbox-layer');
+        const frame = document.getElementById('sandbox-frame');
+        const idEl = document.getElementById('sandbox-id');
+        const titleEl = document.getElementById('sandbox-title');
+
+        idEl.innerText = 'ID: ' + templateId;
+        titleEl.innerText = templateName + ' Sandbox Module';
+
+        const markup = virtualTemplatesDB[templateId];
+        frame.srcdoc = markup || '<body style="display:flex;align-items:center;justify-content:center;height:100vh;background:#f1f5f9;font-family:sans-serif;"><p style="color:#64748b;">Template not found.</p></body>';
+
+        layer.classList.remove('hidden-demo');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSandbox() {
+        const layer = document.getElementById('demo-sandbox-layer');
+        const frame = document.getElementById('sandbox-frame');
+        layer.classList.add('hidden-demo');
+        frame.srcdoc = '';
+        document.body.style.overflow = '';
+    }
+
+    // ────────────────────────────────────────────────────────────────
+    // 5. INIT
+    // ────────────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function() {
+        filterTemplates('all');
+    });
+</script>
+
+</body>
+</html>
